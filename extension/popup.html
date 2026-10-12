@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Fine Print</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon-32.png" width="22" height="22" alt="">
+    <strong>Fine Print</strong>
+  </header>
+  <main id="main"><p class="note">Looking at this page…</p></main>
+  <section class="settings">
+    <label class="toggle"><input type="checkbox" id="auto"> <span>Offer a check when a page asks me to agree</span></label>
+    <label class="toggle" id="quiet-row" hidden><input type="checkbox" id="quiet"> <span>Never offer on <b id="quiet-host"></b></span></label>
+    <details>
+      <summary>Server</summary>
+      <p class="note">Fine Print is open source. If you run your own copy, point the extension at it here.</p>
+      <div class="server"><input id="server" type="text" spellcheck="false" placeholder="https://fineprint.buildtube.app"><button id="save" type="button">Save</button></div>
+    </details>
+  </section>
+  <footer>A fast first read by SubQ, not legal advice. <a href="https://fineprint.buildtube.app/#/anywhere" target="_blank" rel="noopener">How it works</a></footer>
+  <script src="popup.js"></script>
+</body>
+</html>

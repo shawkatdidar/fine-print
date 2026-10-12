@@ -1,0 +1,27 @@
+:root { --bg: #fff; --surface: #f5f5f7; --ink: #1d1d1f; --muted: #55555a; --faint: #8e8e93; --hair: #e0e0e5; --mark: #ffe04b; color-scheme: light dark; }
+@media (prefers-color-scheme: dark) { :root { --bg: #1c1c1e; --surface: #2c2c2e; --ink: #f5f5f7; --muted: #aeaeb2; --hair: #3a3a3c; } }
+* { box-sizing: border-box; }
+body { margin: 0; width: 340px; background: var(--bg); color: var(--ink); font: 14px/1.45 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; letter-spacing: -0.01em; }
+header { display: flex; align-items: center; gap: 8px; padding: 14px 16px 10px; }
+header strong { font-size: 15px; }
+main { padding: 0 16px 6px; }
+h1 { margin: 2px 0 10px; font-size: 16px; font-weight: 600; letter-spacing: -0.02em; }
+.note { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
+.list { display: flex; flex-direction: column; gap: 8px; margin: 0 0 12px; }
+.doc { appearance: none; display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; text-align: left; padding: 10px 12px; border: 1px solid var(--hair); border-radius: 12px; background: var(--bg); color: inherit; font: inherit; cursor: pointer; }
+.doc:hover { border-color: var(--ink); }
+.doc span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.doc em { font-style: normal; font-size: 12px; font-weight: 600; flex: none; color: var(--muted); }
+.doc.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.doc.primary em { color: var(--mark); }
+.settings { border-top: 1px solid var(--hair); padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; }
+.toggle { display: flex; gap: 8px; align-items: flex-start; cursor: pointer; font-size: 13px; }
+.toggle input { margin: 2px 0 0; accent-color: var(--ink); }
+details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+details .note { margin: 8px 0; }
+.server { display: flex; gap: 6px; }
+.server input { flex: 1; min-width: 0; padding: 7px 10px; border: 1px solid var(--hair); border-radius: 8px; background: var(--bg); color: inherit; font: inherit; font-size: 12px; }
+.server button { padding: 7px 12px; border: 0; border-radius: 8px; background: var(--ink); color: var(--bg); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; }
+footer { padding: 10px 16px 14px; color: var(--faint); font-size: 12px; background: var(--surface); }
+footer a { color: var(--muted); }
+:focus-visible { outline: 3px solid #0a66ff; outline-offset: 2px; }

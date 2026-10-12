@@ -1,0 +1,39 @@
+{
+  "supply": {
+    "pages": 164,
+    "words": 59855,
+    "trapPages": {
+      "liability": 70,
+      "renew": 73,
+      "walk": 75,
+      "exclusive": 95,
+      "price": 120,
+      "data": 157
+    }
+  },
+  "lease": {
+    "pages": 120,
+    "words": 49442,
+    "trapPages": {
+      "radius": 44,
+      "holdover": 47,
+      "relocate": 59,
+      "rent": 72,
+      "guaranty": 104,
+      "capital": 110,
+      "entry": 115
+    }
+  },
+  "terms": {
+    "pages": 132,
+    "words": 43924,
+    "trapPages": {
+      "license": 11,
+      "price": 45,
+      "cancel": 49,
+      "sell": 63,
+      "arbitration": 74,
+      "contacts": 92
+    }
+  }
+}

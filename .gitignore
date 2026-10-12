@@ -1,0 +1,10 @@
+.env
+.env.local
+node_modules/
+data/
+.cf-assets/
+.wrangler/
+.dev.vars
+.gstack/
+.DS_Store
+notes/

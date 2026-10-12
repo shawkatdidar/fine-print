@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fine Print</title>
+  <meta name="description" content="Nobody reads the fine print. SubQ reads every word, in about a second.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Fine Print">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <a class="wordmark" href="#/" aria-label="Fine Print, home">Fine Print</a>
+      <a class="home-link" href="https://buildtube.app" rel="noopener">More on BuildTube <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="gift" id="gift" role="status" aria-live="polite" hidden>
+      <span class="gift-text" id="gift-text"></span>
+      <span class="gift-bar" aria-hidden="true"><b id="gift-fill"></b></span>
+    </div>
+  </header>
+  <main id="app" tabindex="-1"></main>
+  <footer class="foot">
+    <p class="credit">Built by <a href="https://x.com/HANDLE" rel="noopener">NAME</a> <span class="dot" aria-hidden="true">·</span> <a href="https://x.com/HANDLE" rel="noopener">@HANDLE on X</a> <span class="dot" aria-hidden="true">·</span> part of <a href="https://buildtube.app" rel="noopener">BuildTube</a></p>
+    <p>With thanks to <a href="https://subq.ai" rel="noopener">Subquadratic</a> for the generous gift of 100 million SubQ tokens that keeps this demo free.</p>
+    <p class="fine">Powered by SubQ Snap, a long-context decision model. The token meter counts every live call; saved results use none. The three sample agreements are fictional, written for this demo. Nothing on this page is legal advice.</p>
+  </footer>
+
+  <dialog id="sheet" class="sheet" aria-labelledby="sheet-title">
+    <div class="sheet-inner">
+      <div class="sheet-head">
+        <h2 id="sheet-title"></h2>
+        <button class="close" type="button" data-close aria-label="Close">Close</button>
+      </div>
+      <div id="sheet-body" class="sheet-body"></div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

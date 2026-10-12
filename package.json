@@ -1,0 +1,11 @@
+{
+  "name": "fine-print",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "generate": "node scripts/generate.mjs",
+    "pack-extension": "node scripts/pack-extension.mjs"
+  }
+}

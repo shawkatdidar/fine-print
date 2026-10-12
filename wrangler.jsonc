@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fine-print",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "build": { "command": "node scripts/build-cf.mjs" },
+  "assets": {
+    "directory": "./.cf-assets",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "LEDGER", "class_name": "Ledger" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Ledger"] }],
+  "routes": [{ "pattern": "fineprint.buildtube.app", "custom_domain": true }],
+  "vars": {
+    // The gift: 100M tokens. SubQ has no balance endpoint, so the Worker counts usage itself.
+    "GIFT_BUDGET": "100000000",
+    // Spent before this counter existed: earlier experiments + building and testing the demo locally.
+    "GIFT_USED_BEFORE": "4097651",
+    "GIFT_RESERVE": "1000000",
+    "RATE_LIMIT_PER_HOUR": "30",
+    "RATE_LIMIT_PER_MINUTE": "6"
+  },
+  "observability": { "enabled": true }
+}

@@ -1,0 +1,387 @@
+// Vocabulary for the synthetic agreements. Placeholders: {A} drafter, {B} signer,
+// {Aposs}/{Bposs} possessives. Duties are [role, phrase] where role is A, B or E (either).
+// Nothing here should look like one of the planted traps.
+
+export const generic = {
+  within: [
+    'within ten (10) Business Days', 'within thirty (30) days after receipt of written notice', 'promptly, and in any event within five (5) Business Days',
+    'no later than the fifteenth (15th) day of each calendar month', 'within a commercially reasonable time', 'within twenty (20) days of the relevant request',
+    'before the end of the calendar quarter in which the matter arises', 'within forty-eight (48) hours of becoming aware of the matter', 'as soon as reasonably practicable',
+    'within sixty (60) days after the end of each Contract Year', 'on or before the date specified in the applicable notice', 'within seven (7) days of a written request',
+    'within the period set out in the relevant schedule', 'not later than the next scheduled review meeting',
+  ],
+  qualifier: [
+    'in accordance with Good Industry Practice', 'at its own cost and expense', 'using personnel who are appropriately trained and qualified', 'acting reasonably and in good faith',
+    'in a manner that does not unreasonably interfere with the other Party', 'in compliance with all applicable laws', 'with the degree of skill and care reasonably expected of a professional in its field',
+    'in consultation with the other Party', 'to the extent within its reasonable control', 'subject to any reasonable instructions given in writing', 'in each case without undue delay',
+    'and shall keep the other Party reasonably informed of its progress', 'in a format reasonably acceptable to the other Party',
+  ],
+  intro: [
+    'To the extent permitted by applicable law', 'Subject to the remaining provisions of this Article', 'Except as expressly set out in this {doc}', 'Without limiting the generality of the foregoing',
+    'In addition to any other rights under this {doc}', 'For the purposes of this Section', 'Save where the context otherwise requires', 'Unless the Parties otherwise agree in writing',
+    'In interpreting this Section', 'As between the Parties', 'Where this {doc} is silent on the matter', 'Subject always to Section {ref}',
+  ],
+  condition: [
+    'the Parties otherwise agree in writing', 'required by applicable law or the order of a competent authority', 'expressly permitted by this {doc}',
+    'the other Party has given its prior written consent, which shall not be unreasonably withheld', 'the circumstances described in Section {ref} apply',
+    'an emergency requires immediate action to protect persons or property', 'a written variation has been signed by authorized representatives of both Parties',
+    'the matter has first been raised at a review meeting', 'the relevant notice has been given in accordance with Article {art}', 'the change is of a purely administrative nature',
+  ],
+  exception: [
+    'with the prior written consent of the other Party', 'as expressly provided in Section {ref}', 'to the extent required by applicable law', 'in accordance with the procedure set out in Article {art}',
+    'where the other Party has failed to respond within the applicable period', 'as reasonably necessary to perform this {doc}',
+  ],
+  construe: [
+    'create a partnership, joint venture or agency relationship between the Parties', 'limit any right or remedy available at law or in equity', 'require either Party to act in breach of applicable law',
+    'waive any right that cannot lawfully be waived', 'confer any benefit on a person who is not a party to this {doc}', 'oblige either Party to disclose information subject to legal privilege',
+    'restrict either Party from complying with a lawful request of a regulator', 'imply any term that is inconsistent with the express terms of this {doc}',
+  ],
+  survive: [
+    'shall survive the expiration or termination of this {doc} for a period of three (3) years', 'apply equally to any Affiliate of either Party that performs obligations under this {doc}',
+    'are in addition to, and not in substitution for, any rights implied by law', 'shall be read together with the provisions of Article {art}',
+    'shall continue to apply to any matter arising before the date of termination', 'shall be reviewed by the Parties at each annual review meeting',
+  ],
+  must: [
+    'shall be in writing and signed by an authorized representative of each Party', 'shall be retained for not less than four (4) years', 'shall be identified by a unique reference number',
+    'shall be made available to the other Party upon reasonable request', 'shall be recorded in the register maintained under Section {ref}', 'shall be prepared in the English language',
+    'shall be accompanied by reasonable supporting documentation', 'shall be addressed to the contact designated for that purpose',
+  ],
+  passive: ['issued', 'delivered', 'submitted', 'prepared', 'provided', 'given', 'made', 'recorded'],
+  years: ['three (3) years', 'four (4) years', 'six (6) years', 'the Term and two (2) years thereafter', 'seven (7) years'],
+  joint: [
+    'meet to discuss the matter in good faith', 'agree a written plan for addressing the issue', 'exchange such information as is reasonably necessary',
+    'cooperate to minimize any disruption', 'review the relevant provisions of this {doc}', 'nominate representatives to resolve the matter', 'document the agreed outcome in writing',
+  ],
+};
+
+// Topic packs. Keys match article keys in documents.mjs.
+export const topics = {
+  scope: {
+    things: ['Purchase Order', 'Product', 'Specification', 'Statement of Work', 'site', 'Affiliate order'],
+    duties: [['A', 'manufacture and supply the Products described in Exhibit A'], ['A', 'maintain sufficient production capacity to meet the Forecasts'], ['E', 'designate a Relationship Manager with authority to resolve operational issues'], ['A', 'notify {B} of any anticipated change in its ownership or senior management'], ['B', 'provide {A} with current drawings for each Product'], ['A', 'perform its obligations from the facilities identified in Exhibit D']],
+    donts: [['A', 'subcontract the manufacture of any Product'], ['E', 'hold itself out as the agent of the other Party'], ['A', 'use any facility not listed in Exhibit D for production']],
+    facts: ['this {doc} establishes the terms on which {B} may from time to time purchase Products from {A}', 'each Affiliate of {B} may place Purchase Orders under this {doc} on the same terms', 'the Exhibits form part of this {doc} and shall have effect as if set out in full in the body of this {doc}', 'in the event of any conflict, the body of this {doc} shall prevail over the Exhibits unless an Exhibit expressly provides otherwise', 'no terms printed on any quotation or acknowledgment form of {A} shall form part of this {doc}', 'the Products may be modified from time to time only through the change control procedure in Exhibit H'],
+  },
+  ordering: {
+    things: ['Purchase Order', 'order acknowledgment', 'release schedule', 'blanket order', 'order change request', 'electronic order'],
+    duties: [['A', 'acknowledge each Purchase Order in writing'], ['A', 'confirm the delivery date for each line item'], ['B', 'state the quantity, part number, delivery date and delivery location in each Purchase Order'], ['A', 'notify {B} of any error or inconsistency in a Purchase Order'], ['E', 'use the electronic ordering system described in Exhibit D where practicable'], ['A', 'maintain a log of all Purchase Orders received']],
+    donts: [['A', 'ship quantities in excess of the quantity specified in a Purchase Order'], ['A', 'substitute any part number for that specified in a Purchase Order'], ['A', 'impose any minimum order charge not set out in Exhibit B']],
+    facts: ['a Purchase Order shall be deemed accepted if {A} does not reject it within three (3) Business Days of receipt', '{B} may change the delivery date of any Purchase Order by up to fourteen (14) days without charge', 'electronic Purchase Orders shall have the same effect as Purchase Orders signed in ink', 'each Purchase Order shall reference the number of this {doc}', '{B} may cancel any Purchase Order before shipment, subject only to reimbursement of the documented cost of finished Products and work in process', 'blanket orders shall authorize releases only up to the quantities stated in them'],
+  },
+  forecasts: {
+    things: ['Forecast', 'rolling forecast', 'capacity plan', 'safety stock', 'lead time schedule', 'allocation plan'],
+    duties: [['B', 'provide a rolling twelve-month Forecast'], ['A', 'review each Forecast and identify any capacity constraints'], ['A', 'maintain safety stock equal to two (2) weeks of forecast demand'], ['E', 'hold a quarterly planning meeting to review Forecasts'], ['A', 'notify {B} of any raw material shortage that may affect supply']],
+    donts: [['A', 'allocate capacity reserved for {B} to any other customer during a shortage'], ['A', 'reduce safety stock below the agreed level']],
+    facts: ['Forecasts are provided for planning purposes', 'the first month of each Forecast shall be treated as firm for scheduling purposes only', '{A} shall bear the cost of any safety stock it elects to hold beyond the agreed level', 'lead times for each Product are set out in Exhibit A', 'Forecasts shall be updated on the first Business Day of each month'],
+  },
+  payment: {
+    things: ['invoice', 'credit note', 'remittance advice', 'disputed amount', 'tax invoice', 'statement of account'],
+    duties: [['A', 'issue a separate invoice for each shipment'], ['A', 'state the Purchase Order number and part number on every invoice'], ['B', 'notify {A} of any disputed invoice amount and the reasons for the dispute'], ['A', 'issue a credit note for any amount found to have been overcharged'], ['E', 'work together to resolve any invoice dispute']],
+    donts: [['A', 'invoice for any amount not set out in Exhibit B'], ['A', 'charge for packaging, handling or documentation unless expressly provided in Exhibit B'], ['A', 'suspend deliveries because of a disputed invoice']],
+    facts: ['all amounts are stated and payable in United States dollars', 'payment of an invoice shall not constitute acceptance of the Products to which it relates', '{B} may set off against any amount due to {A} any amount owed by {A} to {B} under this {doc}', 'sales and use taxes shall be stated separately on each invoice', 'each Party shall bear its own bank charges', 'invoices shall be submitted electronically to the address designated by {B}'],
+  },
+  delivery: {
+    things: ['shipment', 'delivery', 'packing list', 'bill of lading', 'advance shipping notice', 'consignment'],
+    duties: [['A', 'deliver the Products on the delivery date specified in the Purchase Order'], ['A', 'send an advance shipping notice for each shipment'], ['A', 'notify {B} immediately of any anticipated delay in delivery'], ['A', 'use the carriers designated in Exhibit D'], ['A', 'include a packing list with each shipment'], ['A', 'pay any premium freight required to recover a late delivery caused by {A}']],
+    donts: [['A', 'make partial shipments without the consent of {B}'], ['A', 'deliver more than five (5) days before the scheduled date'], ['A', 'change the delivery location specified in a Purchase Order']],
+    facts: ['time of delivery is of the essence', 'title and risk of loss shall pass to {B} upon delivery at the location specified in the Purchase Order', 'deliveries shall be made during the receiving hours stated in Exhibit D', 'the on-time delivery target is set out in Exhibit E', 'Products delivered early may be returned at the cost of {A} or held by {B} without charge until the scheduled date'],
+  },
+  packaging: {
+    things: ['label', 'container', 'pallet', 'returnable packaging', 'barcode', 'carton marking'],
+    duties: [['A', 'package each Product so as to prevent damage in transit'], ['A', 'label each container with the part number, quantity and lot number'], ['A', 'comply with the packaging instructions in Exhibit D'], ['B', 'return reusable containers in good condition'], ['A', 'use recyclable materials wherever practicable']],
+    donts: [['A', 'use packaging containing any substance restricted under applicable law'], ['A', 'mix different part numbers in a single container']],
+    facts: ['returnable packaging remains the property of the Party that supplied it', 'barcodes shall conform to the standard identified in Exhibit D', 'hazardous materials shall be packaged and marked in accordance with applicable transport regulations', 'pallets shall not exceed the dimensions stated in Exhibit D'],
+  },
+  inspection: {
+    things: ['inspection', 'nonconformity', 'rejected Product', 'certificate of conformance', 'sample', 'first article'],
+    duties: [['A', 'perform final inspection of each lot before shipment'], ['A', 'provide a certificate of conformance with each shipment'], ['A', 'submit first article samples for approval before series production'], ['A', 'investigate the root cause of any nonconformity'], ['A', 'deliver a written corrective action report']],
+    donts: [['A', 'ship any lot that has failed final inspection'], ['A', 'rework rejected Products without the approval of {B}']],
+    facts: ['payment for Products shall not constitute acceptance', 'acceptance of any lot shall not waive any right in respect of latent defects', '{B} may inspect Products at the facilities of {A} upon reasonable notice', 'sampling plans shall be agreed in writing for each Product'],
+  },
+  quality: {
+    things: ['quality plan', 'control plan', 'process audit', 'corrective action', 'quality record', 'calibration record'],
+    duties: [['A', 'maintain a quality management system certified to a recognized international standard'], ['A', 'maintain a control plan for each Product'], ['A', 'calibrate all measuring equipment at the intervals specified by the manufacturer'], ['A', 'retain quality records for each lot'], ['A', 'participate in quality review meetings']],
+    donts: [['A', 'allow any certification of its quality management system to lapse']],
+    facts: ['the quality requirements in Exhibit C apply to every Product', 'quality records shall be traceable to individual lots', '{B} may conduct a process audit at any facility used to manufacture Products upon ten (10) Business Days\' notice'],
+  },
+  warranty: {
+    things: ['warranty claim', 'defective Product', 'field failure', 'recall', 'warranty return'],
+    duties: [['A', 'reimburse {B} for the reasonable cost of any recall caused by defective Products'], ['A', 'investigate each warranty claim'], ['A', 'provide replacement Products on an expedited basis'], ['E', 'cooperate in the analysis of any field failure']],
+    donts: [['A', 'condition any warranty remedy on the return of the defective Product where return is impracticable']],
+    facts: ['the warranties in this Article survive acceptance and payment', 'the warranties in this Article are in addition to any warranties implied by law', 'the warranties extend to {B} and its customers', '{A} warrants that it has good title to the Products'],
+  },
+  tooling: {
+    things: ['Tooling', 'mold', 'fixture', 'gauge', 'die', 'tooling record'],
+    duties: [['A', 'maintain all Tooling in good working order'], ['A', 'mark all Tooling owned by {B} with an asset tag'], ['A', 'insure Tooling against loss or damage'], ['A', 'return Tooling owned by {B} upon request'], ['A', 'keep a register of all Tooling']],
+    donts: [['A', 'use Tooling owned by {B} to manufacture goods for any other person'], ['A', 'move Tooling from the facility in which it is located']],
+    facts: ['Tooling paid for by {B} is and shall remain the property of {B}', 'the useful life of each item of Tooling shall be recorded in the tooling register'],
+  },
+  ip: {
+    things: ['design', 'drawing', 'invention', 'improvement', 'trademark', 'technical data'],
+    duties: [['A', 'promptly disclose any improvement to a Product'], ['E', 'use the trademarks of the other Party only as authorized in writing'], ['A', 'mark Products with the trademarks specified by {B}']],
+    donts: [['E', 'remove any proprietary notice from materials of the other Party'], ['A', 'file any patent application based on information furnished by {B}'], ['A', 'reverse engineer any sample furnished by {B}']],
+    facts: ['each Party retains ownership of the Intellectual Property Rights it owned before the Effective Date', 'no license is granted by implication or estoppel', 'improvements to the designs of {B} shall belong to {B}'],
+  },
+  confidentiality: {
+    things: ['Confidential Information', 'disclosure', 'trade secret', 'copy', 'confidentiality notice'],
+    duties: [['E', 'protect the Confidential Information of the other Party using at least reasonable care'], ['E', 'limit disclosure of Confidential Information to persons who need to know it'], ['E', 'return or destroy Confidential Information upon request'], ['E', 'notify the other Party of any unauthorized disclosure']],
+    donts: [['E', 'use Confidential Information of the other Party for any purpose other than performing this {doc}'], ['E', 'disclose the terms of this {doc} to any third party other than its professional advisers']],
+    facts: ['Confidential Information does not include information that is or becomes publicly available through no fault of the receiving Party', 'a Party may disclose Confidential Information to the extent required by law, after giving the other Party notice where lawful', 'the obligations in this Article continue for five (5) years after termination, and indefinitely for trade secrets'],
+  },
+  compliance: {
+    things: ['law', 'export control', 'sanctions screening', 'conflict minerals report', 'anti-bribery policy', 'code of conduct'],
+    duties: [['A', 'comply with the Supplier Code of Conduct in Exhibit F'], ['A', 'provide conflict minerals declarations upon request'], ['E', 'comply with all applicable anti-bribery laws'], ['A', 'maintain all permits required to manufacture the Products'], ['A', 'notify {B} of any investigation by a governmental authority relating to the Products']],
+    donts: [['E', 'offer any improper payment to any government official'], ['A', 'use forced, bonded or child labor']],
+    facts: ['{A} shall be responsible for obtaining export licenses for Products shipped from outside the United States', 'each Party shall maintain an anti-bribery compliance program appropriate to its size'],
+  },
+  insurance: {
+    things: ['policy', 'certificate of insurance', 'insurer', 'coverage', 'deductible'],
+    duties: [['A', 'maintain commercial general liability insurance with limits of not less than five million dollars ($5,000,000) per occurrence'], ['E', 'provide certificates of insurance upon request'], ['E', 'notify the other Party of any cancellation of required coverage'], ['E', 'maintain workers\' compensation insurance as required by law']],
+    donts: [['E', 'allow any required policy to lapse']],
+    facts: ['all insurance shall be placed with insurers rated A- or better', 'insurance shall not limit the liability of either Party', 'each policy shall be primary and non-contributory where so required by this {doc}'],
+  },
+  indemnity: {
+    things: ['claim', 'third-party claim', 'defense', 'settlement', 'indemnified loss'],
+    duties: [['E', 'give prompt notice of any claim for which indemnity is sought'], ['E', 'allow the indemnifying Party to control the defense of the claim'], ['E', 'provide reasonable cooperation in the defense of the claim']],
+    donts: [['E', 'settle any claim that imposes an obligation on the other Party without its consent']],
+    facts: ['{A} shall defend and indemnify {B} against third-party claims arising from defects in the Products', '{A} shall defend and indemnify {B} against claims that the Products infringe the rights of a third party, except to the extent caused by designs furnished by {B}', 'the indemnified Party may participate in the defense with counsel of its choosing at its own cost'],
+  },
+  liability: {
+    things: ['claim', 'loss', 'damages', 'limitation', 'exclusion'],
+    duties: [['E', 'take reasonable steps to mitigate any loss']],
+    donts: [],
+    facts: ['nothing in this {doc} limits liability for death or personal injury caused by negligence', 'nothing in this {doc} limits liability for fraud or fraudulent misrepresentation', 'the limitations in this Article apply whether a claim arises in contract, tort or otherwise'],
+  },
+  term: {
+    things: ['termination notice', 'wind-down plan', 'last-time buy', 'transition', 'final invoice'],
+    duties: [['A', 'cooperate in the orderly transition of supply to a successor supplier'], ['A', 'deliver all Tooling and materials owned by {B}'], ['A', 'complete any accepted Purchase Orders that {B} elects to have completed'], ['E', 'return the Confidential Information of the other Party']],
+    donts: [],
+    facts: ['this {doc} commences on the Effective Date and continues for an Initial Term of five (5) years', 'either Party may terminate this {doc} immediately if the other Party becomes insolvent', 'either Party may terminate this {doc} if the other Party commits a material breach that is not cured within thirty (30) days after notice', '{B} may make a last-time buy of Products before termination takes effect', 'termination shall not affect any rights accrued before termination'],
+  },
+  forcemajeure: {
+    things: ['Force Majeure Event', 'delay', 'mitigation plan', 'allocation'],
+    duties: [['E', 'notify the other Party of any Force Majeure Event'], ['E', 'use reasonable efforts to mitigate the effects of a Force Majeure Event'], ['E', 'resume performance as soon as practicable']],
+    donts: [],
+    facts: ['neither Party shall be liable for delay caused by a Force Majeure Event', 'a Force Majeure Event does not include financial difficulty or a change in market conditions', 'if a Force Majeure Event continues for more than sixty (60) days, the unaffected Party may terminate the affected obligations by notice', 'labor disputes involving the workforce of the affected Party are not Force Majeure Events'],
+  },
+  audit: {
+    things: ['record', 'audit', 'auditor', 'audit report', 'finding'],
+    duties: [['A', 'keep complete and accurate records of all amounts invoiced'], ['A', 'remedy any audit finding']],
+    donts: [],
+    facts: ['the cost of an audit shall be borne by the auditing Party unless it reveals an overcharge of more than five percent (5%)', 'audits shall be conducted during normal business hours'],
+  },
+  disputes: {
+    things: ['dispute', 'escalation notice', 'mediation', 'arbitral award', 'interim relief'],
+    duties: [['E', 'refer any dispute first to its Relationship Manager'], ['E', 'continue to perform its obligations during any dispute']],
+    donts: [],
+    facts: ['either Party may seek interim injunctive relief from any court of competent jurisdiction', 'this {doc} is governed by the laws of the State of Delaware, without regard to its conflict of laws rules', 'the arbitral award shall be final and binding', 'the language of any arbitration shall be English'],
+  },
+  assignment: {
+    things: ['assignment', 'change of control', 'successor', 'subcontract'],
+    duties: [['E', 'notify the other Party of any change of control']],
+    donts: [],
+    facts: ['this {doc} binds and benefits the Parties and their permitted successors and assigns', 'any permitted assignee shall assume in writing the obligations of the assignor'],
+  },
+  notices: {
+    things: ['notice', 'address', 'email', 'courier delivery'],
+    duties: [['E', 'notify the other Party of any change to its notice address']],
+    donts: [],
+    facts: ['notices shall be in writing and delivered by hand, by recognized courier or by email with confirmation of receipt', 'a notice is effective upon receipt or, if delivered outside business hours, on the next Business Day', 'notices to {A} shall be sent to the address set out on the signature page', 'notices to {B} shall be sent to the address set out on the signature page'],
+  },
+  general: {
+    things: ['amendment', 'waiver', 'counterpart', 'heading', 'severance'],
+    duties: [],
+    donts: [],
+    facts: ['this {doc} constitutes the entire agreement between the Parties regarding its subject matter', 'no waiver shall be effective unless in writing', 'if any provision of this {doc} is held invalid, the remaining provisions shall continue in effect', 'this {doc} may be executed in counterparts', 'headings are for convenience only and do not affect interpretation', 'the words "including" and "include" shall be read without limitation', 'no amendment to this {doc} shall be effective unless in writing and signed by both Parties'],
+  },
+
+  // ---- Lease ----
+  premises: {
+    things: ['Premises', 'Common Areas', 'storefront', 'floor plan', 'loading area'],
+    duties: [['A', 'deliver the Premises in broom-clean condition'], ['A', 'maintain the Common Areas in good order'], ['B', 'keep the storefront clean and well lit during business hours'], ['A', 'provide access to the Premises twenty-four (24) hours a day']],
+    donts: [['B', 'obstruct the Common Areas'], ['A', 'erect any structure that blocks the storefront of the Premises']],
+    facts: ['the Premises contain approximately one thousand four hundred twenty (1,420) rentable square feet', 'the Premises are shown on the floor plan attached as Exhibit C', '{B} shall have the non-exclusive right to use the Common Areas in common with other tenants', 'the rentable area of the Premises shall not be remeasured during the Term'],
+  },
+  leaseterm: {
+    things: ['Commencement Date', 'Expiration Date', 'Renewal Option', 'Lease Year', 'early access period'],
+    duties: [['A', 'give {B} early access to the Premises for fit-out'], ['E', 'sign a memorandum confirming the Commencement Date']],
+    donts: [],
+    facts: ['the Term is ten (10) Lease Years beginning on the Commencement Date', '{B} shall have one option to renew the Term for five (5) years by notice given at least nine (9) months before expiration', 'the Commencement Date is the earlier of the date {B} opens for business and one hundred twenty (120) days after delivery of the Premises', 'no rent is payable during the early access period'],
+  },
+  rent: {
+    things: ['Base Rent', 'monthly installment', 'Additional Rent', 'rent statement', 'payment'],
+    duties: [['B', 'pay Base Rent monthly in advance on the first day of each month'], ['A', 'provide a rent statement upon request'], ['B', 'pay rent by electronic transfer to the account designated by {A}']],
+    donts: [],
+    facts: ['Base Rent for the first Lease Year is set out in Exhibit B', 'rent for any partial month shall be prorated', 'Base Rent is abated for the first three (3) full months of the Term', 'all rent shall be paid without demand'],
+  },
+  opex: {
+    things: ['Operating Expenses', 'estimate', 'annual reconciliation', 'Proportionate Share', 'tax bill'],
+    duties: [['A', 'deliver an estimate of Operating Expenses before each calendar year'], ['A', 'deliver an annual reconciliation within one hundred twenty (120) days after year-end'], ['B', 'pay its Proportionate Share of Operating Expenses in monthly installments'], ['A', 'refund any overpayment shown by the annual reconciliation']],
+    donts: [['A', 'include in Operating Expenses any item listed in Exhibit G']],
+    facts: ['{Bposs} Proportionate Share is six and two-tenths percent (6.2%)', 'controllable Operating Expenses shall not increase by more than five percent (5%) per year on a cumulative basis', '{B} may review the books of {A} relating to Operating Expenses once per year'],
+  },
+  deposit: {
+    things: ['Security Deposit', 'letter of credit', 'deposit account'],
+    duties: [['A', 'hold the Security Deposit in a segregated account'], ['B', 'restore any part of the Security Deposit applied to cure a default']],
+    donts: [],
+    facts: ['the Security Deposit is equal to two (2) months of Base Rent', 'no interest is payable on the Security Deposit unless required by law', 'upon any transfer of the Project, {A} shall transfer the Security Deposit to the transferee'],
+  },
+  use: {
+    things: ['Permitted Use', 'operating hours', 'menu', 'outdoor seating area', 'odor'],
+    duties: [['B', 'use the Premises only for the Permitted Use'], ['B', 'comply with all health and food-service regulations'], ['B', 'keep the outdoor seating area tidy'], ['B', 'install and maintain an approved grease interceptor']],
+    donts: [['B', 'permit any nuisance in the Premises'], ['B', 'cause any odor to escape into the Common Areas']],
+    facts: ['the Permitted Use is the operation of a café serving coffee, tea, baked goods and light meals', '{B} may sell beer and wine if it obtains the required license', '{B} may operate the outdoor seating area during the hours permitted by the municipality'],
+  },
+  services: {
+    things: ['utility', 'HVAC service', 'water supply', 'trash removal', 'meter'],
+    duties: [['A', 'provide water and sewer service to the Premises'], ['A', 'provide trash removal from the designated collection area'], ['B', 'pay for electricity consumed in the Premises as measured by its separate meter']],
+    donts: [],
+    facts: ['the Premises are separately metered for electricity and gas', '{A} shall provide heating and cooling to the Common Areas'],
+  },
+  maintenance: {
+    things: ['repair', 'maintenance contract', 'HVAC unit', 'plumbing fixture', 'storefront glass'],
+    duties: [['B', 'maintain the interior of the Premises in good condition'], ['B', 'service the HVAC unit serving the Premises at least twice a year'], ['A', 'repair any damage to the Premises caused by its contractors'], ['B', 'replace any broken storefront glass']],
+    donts: [],
+    facts: ['{B} is not responsible for ordinary wear and tear', 'repairs shall be performed by licensed contractors'],
+  },
+  alterations: {
+    things: ['Alteration', 'plan', 'permit', 'contractor', 'lien waiver'],
+    duties: [['B', 'submit plans for any structural Alteration for approval'], ['B', 'obtain all permits required for any Alteration'], ['B', 'deliver lien waivers from its contractors'], ['A', 'respond to any request for approval within ten (10) Business Days']],
+    donts: [['B', 'make any structural Alteration without approval']],
+    facts: ['{B} may make cosmetic Alterations costing less than ten thousand dollars ($10,000) without approval', '{B} may remove its trade fixtures at the end of the Term'],
+  },
+  access: {
+    things: ['entry', 'inspection', 'showing', 'emergency'],
+    duties: [['A', 'minimize interference with the business of {B} during any entry']],
+    donts: [],
+    facts: ['{A} may show the Premises to prospective tenants during the last nine (9) months of the Term', '{A} shall repair any damage caused by its entry'],
+  },
+  casualty: {
+    things: ['casualty', 'restoration', 'insurance proceeds', 'damage notice'],
+    duties: [['A', 'restore the base building after a casualty'], ['B', 'restore its improvements after a casualty'], ['A', 'notify {B} of the estimated restoration period']],
+    donts: [],
+    facts: ['either Party may terminate this {doc} if restoration cannot be completed within two hundred seventy (270) days', 'restoration shall be to substantially the condition existing before the casualty'],
+  },
+  condemnation: {
+    things: ['taking', 'award', 'condemning authority'],
+    duties: [],
+    donts: [],
+    facts: ['if the whole of the Premises is taken, this {doc} terminates on the date of taking', '{B} may pursue a separate award for its trade fixtures and relocation costs', 'rent shall be reduced in proportion to any partial taking'],
+  },
+  default: {
+    things: ['Event of Default', 'default notice', 'remedy', 'cure period'],
+    duties: [['A', 'mitigate its damages following any Event of Default']],
+    donts: [],
+    facts: ['{A} may pursue any remedy available at law following an uncured Event of Default', '{A} shall be in default if it fails to perform any obligation within thirty (30) days after notice from {B}'],
+  },
+  surrender: {
+    things: ['surrender', 'removal', 'key', 'final inspection'],
+    duties: [['B', 'surrender the Premises broom-clean at the end of the Term'], ['B', 'remove its trade fixtures and signage'], ['B', 'return all keys'], ['E', 'conduct a joint final inspection']],
+    donts: [],
+    facts: ['{B} is not required to remove any Alterations approved by {A}', 'property left in the Premises after surrender may be disposed of by {A} after fifteen (15) days\' notice'],
+  },
+  subordination: {
+    things: ['mortgage', 'estoppel certificate', 'non-disturbance agreement', 'lender'],
+    duties: [['B', 'deliver an estoppel certificate within fifteen (15) days of request'], ['A', 'obtain a non-disturbance agreement from any current lender']],
+    donts: [],
+    facts: ['this {doc} is subordinate to any mortgage, provided the lender agrees not to disturb {B} while {B} is not in default'],
+  },
+  environmental: {
+    things: ['Hazardous Material', 'cleaning product', 'environmental report'],
+    duties: [['B', 'store cleaning products in accordance with the manufacturer\'s instructions'], ['A', 'remediate any Hazardous Material existing before the Commencement Date']],
+    donts: [['B', 'bring any Hazardous Material into the Premises other than ordinary cleaning and office products']],
+    facts: ['{A} has provided {B} with the most recent environmental report for the Project'],
+  },
+  signage: {
+    things: ['sign', 'window graphic', 'blade sign', 'pylon panel'],
+    duties: [['B', 'install a storefront sign within sixty (60) days after the Commencement Date'], ['A', 'provide {B} a panel on the Project pylon sign']],
+    donts: [['B', 'install any sign that does not comply with Exhibit E']],
+    facts: ['window graphics may cover no more than twenty percent (20%) of the storefront glass'],
+  },
+
+  // ---- Terms of Service ----
+  acceptance: {
+    things: ['Terms', 'Service', 'App', 'account'],
+    duties: [['B', 'read these Terms carefully']],
+    donts: [],
+    facts: ['these Terms form an agreement between you and Mossbook Labs, Inc.', 'by creating an account, you accept these Terms', 'the Privacy Notice in Exhibit B explains how we handle Personal Information', 'additional terms for certain features are set out in Exhibit D'],
+  },
+  account: {
+    things: ['account', 'password', 'profile', 'recovery email', 'device'],
+    duties: [['B', 'provide accurate information when you create an account'], ['B', 'keep your password secure'], ['A', 'notify you of any sign-in from a new device'], ['B', 'tell us promptly if you believe your account has been compromised']],
+    donts: [['B', 'share your account with another person'], ['B', 'create an account using another person\'s identity']],
+    facts: ['you must be at least thirteen (13) years old to use the Service', 'you may use a passkey instead of a password', 'you can turn on two-step verification in Settings'],
+  },
+  service: {
+    things: ['Service', 'feature', 'update', 'beta feature', 'storage limit'],
+    duties: [['A', 'provide the Service with reasonable care and skill'], ['A', 'publish the storage limits for each plan on the Plans page']],
+    donts: [],
+    facts: ['beta features are labeled as such in the App', 'the free plan includes five (5) gigabytes of storage', 'we may release updates to the App from time to time to fix bugs and improve security'],
+  },
+  content: {
+    things: ['Content', 'entry', 'photograph', 'album', 'caption'],
+    duties: [['B', 'make sure you have the right to upload any Content you upload']],
+    donts: [['B', 'upload Content that infringes the rights of another person']],
+    facts: ['you own your Content', 'private entries are visible only to you unless you choose to share them', 'shared albums are visible to the people you invite', 'deleted entries remain in the Recently Deleted folder for thirty (30) days'],
+  },
+  features: {
+    things: ['Memories', 'Shared Album', 'reminder', 'widget', 'invitation'],
+    duties: [['B', 'obtain the consent of anyone whose photograph you share'], ['A', 'let you turn off each feature in Settings']],
+    donts: [],
+    facts: ['the Memories feature resurfaces past entries on their anniversary', 'reminders can be scheduled from the Today screen', 'you can invite up to fifty (50) people to a Shared Album'],
+  },
+  acceptableuse: {
+    things: ['misuse', 'report', 'automated access', 'spam'],
+    duties: [['B', 'use the Service only for lawful purposes']],
+    donts: [['B', 'use the Service to harass any person'], ['B', 'scrape or access the Service by automated means'], ['B', 'attempt to bypass any security feature of the Service'], ['B', 'upload malware']],
+    facts: ['you can report misuse from the menu on any shared entry', 'the Community Guidelines in Exhibit G apply to shared Content'],
+  },
+  thirdparty: {
+    things: ['third-party service', 'integration', 'print partner', 'app store'],
+    duties: [['A', 'identify each third-party service before you connect it']],
+    donts: [],
+    facts: ['third-party services are governed by their own terms', 'you may disconnect an integration at any time in Settings'],
+  },
+  communications: {
+    things: ['email', 'push notification', 'newsletter', 'service message'],
+    duties: [['A', 'include an unsubscribe link in every marketing email']],
+    donts: [],
+    facts: ['you can turn off push notifications in your device settings', 'we will send service messages about security and billing even if you unsubscribe from marketing'],
+  },
+  changes: {
+    things: ['change', 'notice', 'new version'],
+    duties: [],
+    donts: [],
+    facts: ['the date of the latest version of these Terms appears at the top of this document', 'previous versions of these Terms are available on request'],
+  },
+  termination: {
+    things: ['suspension', 'closure', 'appeal', 'export'],
+    duties: [['B', 'stop using the Service if you no longer agree to these Terms']],
+    donts: [],
+    facts: ['you can close your account at any time in Settings', 'you may appeal a suspension by contacting support'],
+  },
+  disclaimers: {
+    things: ['warranty', 'availability', 'error'],
+    duties: [],
+    donts: [],
+    facts: ['the Service is provided on an "as is" basis to the extent permitted by law', 'nothing in these Terms affects your rights under consumer protection law'],
+  },
+  billing: {
+    things: ['Subscription', 'billing period', 'receipt', 'payment method', 'gift card'],
+    duties: [['A', 'send you a receipt for every payment'], ['B', 'keep your payment method up to date']],
+    donts: [],
+    facts: ['prices are shown in your local currency before you subscribe', 'gift cards do not expire', 'taxes are included in the displayed price where required by law'],
+  },
+  privacy: {
+    things: ['Personal Information', 'data request', 'cookie', 'retention period', 'processor'],
+    duties: [['A', 'respond to data access requests within thirty (30) days'], ['A', 'encrypt your entries in transit and at rest'], ['A', 'use processors only under written contracts']],
+    donts: [],
+    facts: ['you can request a copy of your Personal Information at any time', 'we keep account records for as long as your account is open', 'the App uses only the cookies needed to keep you signed in'],
+  },
+  arbitration: {
+    things: ['claim', 'arbitrator', 'filing fee', 'hearing'],
+    duties: [['E', 'try to resolve any dispute informally for thirty (30) days first']],
+    donts: [],
+    facts: ['small claims may be brought in small claims court', 'hearings may be held by video'],
+  },
+};
